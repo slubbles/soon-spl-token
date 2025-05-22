@@ -2,15 +2,49 @@ use anchor_lang::prelude::*;
 
 /// Custom errors for the Soon SPL Token program.
 #[error_code]
-pub enum SoonTokenError {
-    /// The caller is not authorized to perform this action (e.g., not the mint authority or owner)
-    Unauthorized,
-    /// Insufficient funds for the operation (e.g., trying to transfer or burn more than available)
-    InsufficientFunds,
-    /// Tokens are still locked in vesting and cannot be released yet
-    VestingNotReleased,
-    /// Invalid instruction data or parameters
-    InvalidInstruction,
-    /// Metadata fields are too long for the allocated space
-    MetadataTooLong,
+pub enum TokenError {
+    #[msg("Invalid token authority")]
+    InvalidAuthority,
+    
+    #[msg("Insufficient token balance")]
+    InsufficientBalance,
+    
+    #[msg("Invalid token mint")]
+    InvalidMint,
+    
+    #[msg("Invalid token account")]
+    InvalidTokenAccount,
+    
+    #[msg("Vesting schedule already exists")]
+    VestingScheduleExists,
+    
+    #[msg("Invalid vesting schedule")]
+    InvalidVestingSchedule,
+    
+    #[msg("Vesting period not ended")]
+    VestingPeriodNotEnded,
+    
+    #[msg("Invalid token decimals")]
+    InvalidDecimals,
+    
+    #[msg("Token supply exceeded")]
+    SupplyExceeded,
+    
+    #[msg("Invalid token metadata")]
+    InvalidMetadata,
+    
+    #[msg("Operation not authorized")]
+    NotAuthorized,
+    
+    #[msg("Invalid token amount")]
+    InvalidAmount,
+    
+    #[msg("Token account frozen")]
+    AccountFrozen,
+    
+    #[msg("Token account closed")]
+    AccountClosed,
+    
+    #[msg("Invalid token program")]
+    InvalidTokenProgram,
 } 

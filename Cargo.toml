@@ -2,6 +2,8 @@
 name = "soon_spl_token"
 version = "0.1.0"
 edition = "2021"
+description = "SOON Network SPL Token Implementation"
+authors = ["Your Name <your.email@example.com>"]
 
 [lib]
 crate-type = ["cdylib", "lib"]
@@ -10,4 +12,6 @@ crate-type = ["cdylib", "lib"]
 anchor-lang = "0.29.0"
 solana-program = "1.18.2"
 spl-token = { version = "4.0.0", features = ["no-entrypoint"] }
-spl-token-metadata = { version = "0.4.0", features = ["no-entrypoint"] } 
+spl-token-metadata = { version = "0.4.0", features = ["no-entrypoint"] }
+borsh = "0.10.3"
+thiserror = "1.0" 
